@@ -1,4 +1,4 @@
-import os
+import os; os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import numpy as np
 from PIL import Image
 from flask import Flask, jsonify, request
@@ -79,5 +79,5 @@ def predictRoti():
             }
         }), 400
 
-if __name__ == "__main__":
-    app.run(port=int(os.environ.get("PORT", 8080)), host='0.0.0.0', debug=True)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5001)))
